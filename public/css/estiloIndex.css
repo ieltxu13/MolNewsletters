@@ -1,24 +1,58 @@
 body {
   /* fallback */
-  background-color: #2F2727;
-  background-image: url(images/radial_bg.png);
+  background-color: goldenrod;
   background-position: center center;
   background-repeat: no-repeat;
 
   /* Safari 4-5, Chrome 1-9 */
   /* Can't specify a percentage size? Laaaaaame. */
-  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(gold), to(goldenrod));
 
   /* Safari 5.1+, Chrome 10+ */
-  background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+  background: -webkit-radial-gradient(circle, gold, goldenrod);
 
   /* Firefox 3.6+ */
-  background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+  background: -moz-radial-gradient(circle, gold, goldenrod);
 
   /* IE 10 */
-  background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+  background: -ms-radial-gradient(circle, gold, goldenrod);
 
   /* Opera couldn't do radial gradients, then at some point they started supporting the -webkit- syntax, how it kinda does but it's kinda broken (doesn't do sizing) */
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 @font-face {
@@ -43,3 +77,4 @@ body {
    font-weight: normal;
    src: local("?"), url("../fonts/Brush Script Std/Brush Script Std.woff") format("woff"), url("../fonts/Brush Script Std/Brush Script Std.ttf") format("truetype");
 }
+

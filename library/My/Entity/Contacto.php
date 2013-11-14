@@ -1,17 +1,11 @@
 <?php
 
-/**
- * Description of Cliente
- *
- * @author root
- */
-
 namespace My\Entity;
 
 /**
  * @Entity
  */ 
-class Cliente {
+class Contacto {
     
     /**
      * @var integer 
@@ -55,28 +49,17 @@ class Cliente {
      * @Column(type="text")
      */
     protected $otros;
-    
+
     /**
      *
-     * @OneToMany(targetEntity="Proyecto", mappedBy="cliente")
+     * @var GrupoContactos
+     * @ManyToMany (targetEntity="GrupoContactos", inversedBy="contactos", cascade={"persist"}, fetch="EAGER")
+     * @JoinTable(name="grupoContactos_contactos")
      */
-    protected $proyectos;
-    
-    /**
-     * @Column(type="datetime", nullable=false)
-     * @Timestamp
-     */
-    protected $creado;
-    
-    /**
-     * @Column(type="datetime", nullable=true)
-     * @Timestamp
-     */
-    protected $modificado;
+    protected $listas;
     
     public function __construct() {
-        $this->creado = new \DateTime(date('Y-m-d H:i:s'));
-        $this->proyectos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->listas = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     public function getId(){
@@ -123,31 +106,16 @@ class Cliente {
         $this->otros = $otros;
     }
     
-    public function getProyectos() {
-        return $this->proyectos;
+    public function getGrupos() {
+        return $this->listas;
     }
     
-    public function agregarProyecto(Proyecto $proyecto) {
-        $this->proyectos[] = $proyecto;
+    public function agregarGrupo(GrupoContactos $grupoContactos) {
+        $this->listas[] = $grupoContactos;
     }
     
-    public function quitarProyecto(Proyecto $proyecto) {
-        $this->proyectos->removeElement($proyecto);
+    public function quitarGrupo(GrupoContactos $grupoContactos) {
+        $this->listas->removeElement($grupoContactos);
     }
     
-    public function getCreado(){
-        return date_format($this->creado, 'Y-m-d H:i:s');
-    }
-    
-    public function setCreado($fecha){
-        $this->creado = new \DateTime($fecha);
-    }
-    
-    public function getModificado(){
-        return date_format($this->modificado, 'Y-m-d H:i:s');
-    }
-    
-    public function setModificado($fecha){
-        $this->modificado = new \DateTime($fecha);
-    }
 }

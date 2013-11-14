@@ -37,11 +37,11 @@ class My_Auth_Adapter implements Zend_Auth_Adapter_Interface{
     public function authenticate() 
     {
         try{
-            $this->user = Administracion_Model_Usuario::authenticate($this->username, $this->password);
+            $this->user = Default_Model_Usuario::authenticate($this->username, $this->password);
         } catch (Exception $e) {
-            if($e->getMessage() == Administracion_Model_Usuario::NOT_FOUND)
+            if($e->getMessage() == Default_Model_Usuario::NOT_FOUND)
                 return $this->createResult(Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND, array(self::NOT_FOUND_MSG));
-            if($e->getMessage() == Administracion_Model_Usuario::WRONG_PW)         
+            if($e->getMessage() == Default_Model_Usuario::WRONG_PW)         
                 return $this->createResult(Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID, array(self::BAD_PW_MSG));
         }
         

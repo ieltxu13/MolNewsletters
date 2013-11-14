@@ -8,7 +8,7 @@
         <meta  http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php
         echo $this->headLink()
-                ->prependStylesheet($this->baseUrl() . '/css/estilos.css')
+                ->prependStylesheet($this->baseUrl() . '/css/estiloIndex.css')
                 ->prependStylesheet($this->baseUrl() . '/css/bootstrap.css');
 
         echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery/js/jquery-1.10.2.min.js')
@@ -24,11 +24,8 @@
         <![endif]-->
     </head>
     <body>
-        <div class="container">
-            <div class="row">
+        <div class="container">         
                 <?php echo $this->layout()->content; ?>
-            </div>
-                
         </div>
 
     </div>
