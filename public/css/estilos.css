@@ -1,0 +1,56 @@
+body {
+  /* fallback */
+  background-color: goldenrod;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  /* Safari 4-5, Chrome 1-9 */
+  /* Can't specify a percentage size? Laaaaaame. */
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(gold), to(goldenrod));
+
+  /* Safari 5.1+, Chrome 10+ */
+  background: -webkit-radial-gradient(circle, gold, goldenrod);
+
+  /* Firefox 3.6+ */
+  background: -moz-radial-gradient(circle, gold, goldenrod);
+
+  /* IE 10 */
+  background: -ms-radial-gradient(circle, gold, goldenrod);
+
+  /* Opera couldn't do radial gradients, then at some point they started supporting the -webkit- syntax, how it kinda does but it's kinda broken (doesn't do sizing) */
+}
+
+header{
+    margin-top: 30px;
+    background: url('../img/grey_wash_wall.png');
+    background-repeat: repeat;
+    clear: both;
+    -webkit-box-shadow: 1px 9px 3px -3px #000;
+    -moz-box-shadow: 1px 9px 3px -3px #000;
+    box-shadow: 1px 9px 3px -3px #000;
+}
+
+
+
+@font-face {
+   font-family: "BudHand";
+   font-style: normal;
+   font-weight: normal;
+   src: url("../fonts/BUDHAND2/BUDHAND2.woff") format("woff"), url("../fonts/BUDHAND2/BUDHAND2.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: "JPHST";
+
+   font-style: normal;
+   font-weight: normal;
+   src: local("?"), url("../fonts/JPHST/JPHST.woff") format("woff"), url("../fonts/JPHST/JPHST.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: "Bush Script Std";
+
+   font-style: normal;
+   font-weight: normal;
+   src: local("?"), url("../fonts/Brush Script Std/Brush Script Std.woff") format("woff"), url("../fonts/Brush Script Std/Brush Script Std.ttf") format("truetype");
+}

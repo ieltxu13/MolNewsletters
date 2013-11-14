@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AZ desarrollo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <title>Roxy Freyra</title>
+        <meta  http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <?php
+        echo $this->headLink()
+                ->prependStylesheet($this->baseUrl() . '/css/estilos.css')
+                ->prependStylesheet($this->baseUrl() . '/css/bootstrap.css');
+
+        echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery/js/jquery-1.10.2.min.js')
+                ->appendFile($this->baseUrl() . '/js/jqueryui/jquery-ui-1.10.1.custom.js')
+                ->appendFile($this->baseUrl() . '/js/jquery.spasticNav.js')
+                ->appendFile($this->baseUrl() . '/js/bootstrap.min.js')
+                ->appendFile($this->baseUrl() . '/js/frontend.js')
+        ?>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <header class="row">
+                <div class="col-md-2">
+
+                </div>
+
+                <div class="col-md-10">
+                    <div class="well-lg">
+                        <h1>Mol Newletters</div>
+                </div>
+            </header>   
+            <br>
+            <br>
+            <br><br>
+            <div class="row">
+                
+                <?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
