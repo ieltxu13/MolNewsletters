@@ -9,12 +9,13 @@
         <?php
         echo $this->headLink()
                 ->prependStylesheet($this->baseUrl() . '/css/estiloIndex.css')
-                ->prependStylesheet($this->baseUrl() . '/css/bootstrap.css');
+                ->prependStylesheet($this->baseUrl() . '/css/bootstrap.css')
+                ->prependStylesheet($this->baseUrl() . '/css/validate.css');
 
         echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery/js/jquery-1.10.2.min.js')
-                ->appendFile($this->baseUrl() . '/js/jqueryui/jquery-ui-1.10.1.custom.js')
                 ->appendFile($this->baseUrl() . '/js/bootstrap.min.js')
                 ->appendFile($this->baseUrl() . '/js/frontend.js')
+                ->appendFile($this->baseUrl() . '/js/validate.js')
         ?>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

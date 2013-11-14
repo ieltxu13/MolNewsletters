@@ -33,6 +33,9 @@
             <controllerFile controllerName="Informes">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="Async">
+              <actionMethod actionName="index"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory>
             <formFile formName="LoginForm"/>
@@ -54,6 +57,9 @@
                 <viewScriptFile forActionName="error"/>
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Informes">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Async">
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>

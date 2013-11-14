@@ -15,7 +15,6 @@ class Default_Form_LoginForm extends Zend_Form
             'class'=>'form-control',
             'placeholder'=>'Usuario',
             'autofocus'=>'true',
-            'required'=>'true'
             )
         );
 
@@ -24,7 +23,6 @@ class Default_Form_LoginForm extends Zend_Form
         $contrasenia->setAttribs(array(
             'class'=>'form-control',
             'placeholder'=>'Contraseña',
-            'required'=>'true'
             )
         );
 

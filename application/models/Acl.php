@@ -17,10 +17,12 @@ class Application_Model_Acl extends Zend_Acl
         $this->addResource(new Zend_Acl_Resource('default'))
              ->addResource(new Zend_Acl_Resource('default:index'),'default')
              ->addResource(new Zend_Acl_Resource('default:informes'),'default')
+             ->addResource(new Zend_Acl_Resource('default:async'),'default')
              ->addResource(new Zend_Acl_Resource('default:error'),'default');
         
         $this->allow('invitado', 'default:index','index')
              ->allow('invitado', 'default:error','error')
+             ->allow('invitado', 'default:async','validarform')
              ->allow('invitado', 'default:informes',array('index'));
              
         
