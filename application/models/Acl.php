@@ -17,6 +17,7 @@ class Application_Model_Acl extends Zend_Acl
         $this->addResource(new Zend_Acl_Resource('default'))
              ->addResource(new Zend_Acl_Resource('default:index'),'default')
              ->addResource(new Zend_Acl_Resource('default:informes'),'default')
+             ->addResource(new Zend_Acl_Resource('default:contactos'),'default')
              ->addResource(new Zend_Acl_Resource('default:async'),'default')
              ->addResource(new Zend_Acl_Resource('default:error'),'default');
         
@@ -29,6 +30,7 @@ class Application_Model_Acl extends Zend_Acl
         $this
              ->allow('usuario','default:index',array('salir'))
              ->allow('usuario','default:informes',array('index','nuevo'))
+             ->allow('usuario','default:contactos',array('index','nuevo'))
              ->deny('usuario','default:index',array('index'));
         
     }

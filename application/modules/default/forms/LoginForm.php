@@ -10,7 +10,7 @@ class Default_Form_LoginForm extends Zend_Form
         $this->addPrefixPath('My_Form_Decorator', 'My/Form/Decorator/', 'decorator');
 
         $usuario = new Zend_Form_Element_Text('usuario');
-        $usuario->addFilter('StripTags')->addFilter('StringTrim')->setRequired()->addErrorMessage('Campo requerido');
+        $usuario->addFilter('StripTags')->addFilter('StringTrim')->setRequired();
         $usuario->setAttribs(array(
             'class'=>'form-control',
             'placeholder'=>'Usuario',
@@ -19,7 +19,7 @@ class Default_Form_LoginForm extends Zend_Form
         );
 
         $contrasenia = new Zend_Form_Element_Password('clave');
-        $contrasenia->addFilter('StripTags')->addFilter('StringTrim')->setRequired()->addErrorMessage('Campo requerido');
+        $contrasenia->addFilter('StripTags')->addFilter('StringTrim')->setRequired();
         $contrasenia->setAttribs(array(
             'class'=>'form-control',
             'placeholder'=>'Contraseña',

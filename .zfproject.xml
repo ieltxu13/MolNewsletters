@@ -36,9 +36,14 @@
             <controllerFile controllerName="Async">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="Contactos">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="nuevo"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory>
             <formFile formName="LoginForm"/>
+            <formFile formName="ContactoForm"/>
           </formsDirectory>
           <layoutsDirectory enabled="false">
             <layoutScriptsDirectory enabled="false"/>
@@ -61,6 +66,12 @@
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Async">
                 <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Contactos">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Contactos">
+                <viewScriptFile forActionName="nuevo"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>

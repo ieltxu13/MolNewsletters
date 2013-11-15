@@ -4,12 +4,12 @@
         <title>MOL Neswletters</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
         <meta  http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php
         echo $this->headLink()
                 ->prependStylesheet($this->baseUrl() . '/css/estilos.css')
-                ->prependStylesheet($this->baseUrl() . '/css/bootstrap.css');
+                ->prependStylesheet($this->baseUrl() . '/css/bootstrap.css')
+                ->prependStylesheet($this->baseUrl() . '/css/validate.css');
 
         echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery/js/jquery-1.10.2.min.js')
                 ->appendFile($this->baseUrl() . '/js/bootstrap.min.js')
@@ -24,13 +24,25 @@
         <![endif]-->
     </head>
     <body>
+        <header>
+            <img src="<?php echo $this->baseUrl() . '/img/marcasinfondo.png' ?>" width="400px" height="100px">
+        </header>
         <div class="container">
             <div class="row">
-                <?php echo $this->layout()->content; ?>
-            </div>
-                
-        </div>
+                <br>
 
+                <div class="col-md-2">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="<?php echo $this->url(array('module'=>'default','controller'=>'index','action'=>'index'))?>">Inicio</a></li>
+                        <li><a href="<?php echo $this->url(array('module'=>'default','controller'=>'contactos','action'=>'index'))?>">Contactos</a></li>
+                        <li><a href="<?php echo $this->url(array('module'=>'default','controller'=>'informes','action'=>'index'))?>">Informes</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-10 area-trabajo">
+                    <?php echo $this->layout()->content; ?>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

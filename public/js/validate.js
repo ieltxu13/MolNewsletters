@@ -50,8 +50,10 @@ function doValidation(id,form)
 
 function getErrorHtml(formErrors,id)
 {
+  
     for(errorKey in formErrors)
         {   
+            $("#"+id).popover('destroy');
             $("#"+id).popover({content: formErrors[errorKey]});
             $("#"+id).popover('show');
         }

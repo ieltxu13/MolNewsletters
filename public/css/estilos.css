@@ -1,45 +1,72 @@
+html {
+    height: 100%;
+}
 body {
-  /* fallback */
-  background-color: #2F2727;
-  background-image: url(images/radial_bg.png);
-  background-position: center center;
-  background-repeat: no-repeat;
+    height: 100%;
+    /* fallback */
+    background-color: #000099;
+    background-image: url(images/radial_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
 
-  /* Safari 4-5, Chrome 1-9 */
-  /* Can't specify a percentage size? Laaaaaame. */
-  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+    /* Safari 4-5, Chrome 1-9 */
+    /* Can't specify a percentage size? Laaaaaame. */
+    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#000099));
 
-  /* Safari 5.1+, Chrome 10+ */
-  background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-radial-gradient(circle, #1a82f7, #000099);
 
-  /* Firefox 3.6+ */
-  background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+    /* Firefox 3.6+ */
+    background: -moz-radial-gradient(circle, #1a82f7, #000099);
 
-  /* IE 10 */
-  background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+    /* IE 10 */
+    background: -ms-radial-gradient(circle, #1a82f7, #000099);
 
-  /* Opera couldn't do radial gradients, then at some point they started supporting the -webkit- syntax, how it kinda does but it's kinda broken (doesn't do sizing) */
+    /* Opera couldn't do radial gradients, then at some point they started supporting the -webkit- syntax, how it kinda does but it's kinda broken (doesn't do sizing) */
+}
+
+.container {
+    height: 100%;
+}
+
+.row .area-trabajo{
+    height: 100%;
+}
+
+.area-trabajo {
+    background: #6699ff;
+    border: 1px solid black;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.titulo-y-acciones h1,img{
+    display: inline;
 }
 
 @font-face {
-   font-family: "BudHand";
-   font-style: normal;
-   font-weight: normal;
-   src: url("../fonts/BUDHAND2/BUDHAND2.woff") format("woff"), url("../fonts/BUDHAND2/BUDHAND2.ttf") format("truetype");
+    font-family: "BudHand";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/BUDHAND2/BUDHAND2.woff") format("woff"), url("../fonts/BUDHAND2/BUDHAND2.ttf") format("truetype");
 }
 
 @font-face {
-   font-family: "JPHST";
+    font-family: "JPHST";
 
-   font-style: normal;
-   font-weight: normal;
-   src: local("?"), url("../fonts/JPHST/JPHST.woff") format("woff"), url("../fonts/JPHST/JPHST.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/JPHST/JPHST.woff") format("woff"), url("../fonts/JPHST/JPHST.ttf") format("truetype");
 }
 
 @font-face {
-   font-family: "Bush Script Std";
+    font-family: "Bush Script Std";
 
-   font-style: normal;
-   font-weight: normal;
-   src: local("?"), url("../fonts/Brush Script Std/Brush Script Std.woff") format("woff"), url("../fonts/Brush Script Std/Brush Script Std.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/Brush Script Std/Brush Script Std.woff") format("woff"), url("../fonts/Brush Script Std/Brush Script Std.ttf") format("truetype");
 }
