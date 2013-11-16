@@ -32,6 +32,10 @@
             </controllerFile>
             <controllerFile controllerName="Informes">
               <actionMethod actionName="index"/>
+              <actionMethod actionName="nuevo"/>
+              <actionMethod actionName="agregarImagen"/>
+              <actionMethod actionName="agregarImagen2"/>
+              <actionMethod actionName="agregarImagen22"/>
             </controllerFile>
             <controllerFile controllerName="Async">
               <actionMethod actionName="index"/>
@@ -44,6 +48,8 @@
           <formsDirectory>
             <formFile formName="LoginForm"/>
             <formFile formName="ContactoForm"/>
+            <formFile formName="InformeForm"/>
+            <formFile formName="ImagenForm"/>
           </formsDirectory>
           <layoutsDirectory enabled="false">
             <layoutScriptsDirectory enabled="false"/>
@@ -72,6 +78,18 @@
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Contactos">
                 <viewScriptFile forActionName="nuevo"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Informes">
+                <viewScriptFile forActionName="nuevo"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Informes">
+                <viewScriptFile forActionName="agregarImagen"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Informes">
+                <viewScriptFile forActionName="agregarImagen2"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Informes">
+                <viewScriptFile forActionName="agregarImagen22"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>
