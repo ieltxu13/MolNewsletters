@@ -27,7 +27,7 @@ class Imagen {
     /**
      *
      * @var string
-     * @Column(type="varchar", lenght=255)
+     * @Column(type="string", length=255)
      */
     protected $nombre;
     

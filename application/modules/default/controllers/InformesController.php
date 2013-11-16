@@ -30,10 +30,17 @@ class Default_InformesController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
+        
+        $query = $this->_em->createQuery('SELECT I FROM My\Entity\Informe I ORDER BY I.titulo DESC');
+        
+        $informes = $query->getResult();
+        
+        $this->view->informes = $informes;
+        
         $this->view->mensajes = $this->_helper->flashMessenger->getMessages();
     }
 
-    public function agregarImagen() {
+    public function agregarImagenAction() {
 
         if (!$this->_getParam('id')) {
 
@@ -48,7 +55,7 @@ class Default_InformesController extends Zend_Controller_Action {
 
         $form = new Default_Form_ImagenForm();
 
-        $this->view->formimagen() = $form;
+        $this->view->formimagen = $form;
 
         if ($this->getRequest()->isPost()) {
 
@@ -76,10 +83,10 @@ class Default_InformesController extends Zend_Controller_Action {
         }
     }
     
-    public function nuevoInforme(){
+    public function nuevoAction(){
         $form = new Default_Form_InformeForm();
 
-        $this->view->formInforme() = $form;
+        $this->view->formInforme = $form;
 
         if ($this->getRequest()->isPost()) {
 
@@ -87,20 +94,18 @@ class Default_InformesController extends Zend_Controller_Action {
 
             if ($form->isValid($data)) {
 
-                $form->upload->receive();
 
-                $imagen = new My\Entity\Imagen();
+                $informe = new My\Entity\Informe();
 
-                $imagen->setResumen($form->resumen->getValue());
-                $imagen->setNombre($form->upload->getFileName());
+                $informe->setTitulo($form->titulo->getValue());
+                $informe->setCopete($form->copete->getValue());
+                $informe->setResumen($form->resumen->getValue());
 
-                $informe = $this->_em->find('My\Entity\Informe', $idInforme);
-
-                $informe->agregarImagen($imagen);
-
+                $this->_em->persist($informe);
+                
                 $this->_em->flush();
 
-                $this->_helper->flashMessenger->addMessages('Imagen Agregada');
+                $this->_helper->flashMessenger->addMessage('Informe Agregado');
 
                 $this->_helper->redirector('index');
             }

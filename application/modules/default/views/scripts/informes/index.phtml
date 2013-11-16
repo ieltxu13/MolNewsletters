@@ -1,3 +1,35 @@
-<h1>
-    Accceso Correcto, estás ahora en informes/index.
-</h1>
+<div class="titulo-y-acciones">
+  <h1>Informes</h1>
+  <a href="<?php echo $this->url(array('module'=>'default','controller'=>'informes','action'=>'nuevo'))?>">
+      <img src="<?php echo $this->baseUrl() . '/img/add_business_user.png'?>" class="pull-right">
+  </a>
+</div>
+
+<?php if (count($this->mensajes)) : ?>
+   <div class="alert alert-success">
+       <button type="button" class="close" data-dismiss="alert">&times;</button>
+       <ul id="messages">
+           <?php foreach ($this->mensajes as $message) : ?>
+               <li><?php echo $this->escape($message); ?></li>
+           <?php endforeach; ?>
+       </ul>
+   </div>
+<?php endif; ?>
+
+<br>
+<table class="table">
+    <tr>
+        <th>Título</th>
+    </tr>
+    
+        <?php 
+        if ($this->informes != null) :
+        foreach ($this->informes as $informe) :?>
+    <tr>
+        <td><?php echo $informe->getTitulo() ?></td>
+        </tr>
+        <?php endforeach; else : ?>
+        <tr><td colspan="4">No se encontraron registros</td></tr>
+        <?php endif; ?>
+    
+</table>
