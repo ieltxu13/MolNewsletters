@@ -2,6 +2,18 @@
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
 
+    /**
+     * @var Bisna\Application\Container\DoctrineContainer
+     *
+     */
+    protected $_doctrineContainer = null;
+
+    /**
+     * @var Doctrine\ORM\EntityManager
+     *
+     */
+    protected $_em = null;
+    
     private $_acl = null;
 
     protected function _initSession() {
@@ -25,12 +37,22 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
 
     protected function _initTranslate() {
         $translator = new Zend_Translate(
-        'array',
-        APPLICATION_PATH . '/resources/languages',
-        'es',
-        array('scan' => Zend_Translate::LOCALE_DIRECTORY)
-  );
-  Zend_Validate_Abstract::setDefaultTranslator($translator);
+                'array', APPLICATION_PATH . '/resources/languages', 'es', array('scan' => Zend_Translate::LOCALE_DIRECTORY)
+        );
+        Zend_Validate_Abstract::setDefaultTranslator($translator);
+    }
+    
+    protected function _initDoctrineEventListeners() {
+        
+        $this->bootstrap('doctrine');
+        $this->_doctrineContainer = Zend_Registry::get('doctrine');
+        $this->_em = $this->_doctrineContainer->getEntityManager();
+        
+        $this->_em->getEventManager()->addEventListener(array(
+            \Doctrine\ORM\Events::onFlush),
+                new My\Entity\AuditoriaListener()
+                );
+        
     }
 
 }

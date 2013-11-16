@@ -6,15 +6,11 @@ class Default_ContactosController extends Zend_Controller_Action
     /**
      * @var Bisna\Application\Container\DoctrineContainer
      *
-     *
-     *
      */
     protected $_doctrineContainer = null;
 
     /**
      * @var Doctrine\ORM\EntityManager
-     *
-     *
      *
      */
     protected $_em = null;
@@ -39,6 +35,27 @@ class Default_ContactosController extends Zend_Controller_Action
         $form = new Default_Form_ContactoForm();
         
         $this->view->form = $form;
+        
+        if ($this->getRequest()->isPost()) {
+            
+            $data = $this->getRequest()->getPost(); 
+            
+            if ($form->isValid($data)){
+                
+                $contacto = new My\Entity\Contacto();
+                
+                $contacto->setNombre($form->nombre->getValue());
+                
+                $contacto->setEmail($form->email->getValue());
+                $contacto->setTelefonos($form->telefonos->getValue());
+                $contacto->setSitio($form->sitio->getValue());
+                $contacto->setOtros($form->otros->getValue());
+                
+                $this->_em->persist($contacto);
+                $this->_em->flush();
+                
+            }
+        }
     }
 
 
