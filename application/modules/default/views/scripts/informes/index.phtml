@@ -1,9 +1,9 @@
 <div class="titulo-y-acciones">
     <h1>Informes</h1>
-    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'informes', 'action' => 'nuevo')) ?>">
+    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'informes', 'action' => 'nuevo'),null,true) ?>">
         <img src="<?php echo $this->baseUrl() . '/img/add_to_folder.png' ?>" class="pull-right">
-    </a>
-    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')) ?>">
+    <
+    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index'),null, true) ?>">
         <img src="<?php echo $this->baseUrl() . '/img/back.png' ?>" class="pull-right">
     </a>
 </div>
@@ -33,7 +33,7 @@
             <tr>
                 <td><?php echo $informe->getTitulo() ?></td>
                 <td>
-                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'informes', 'action' => 'detalle', 'id' => $informe->getId())) ?>">
+                <a href="<?php echo $this->url(array('id' => $informe->getId()),'detalle',true) ?>">
                     <img src="<?php echo $this->baseUrl() . '/img/folder_full.png' ?>" class="pull-right">
                 </a>
             </td>

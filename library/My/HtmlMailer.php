@@ -5,8 +5,8 @@ class My_HtmlMailer
     extends Zend_Mail
 {
     
-    static $fromEmail = "contacto@azdesarrollo.com.ar";
-    static $fromName = "NewsLetter AZdesarrollo";
+    static $fromEmail = "newsletter@grupomol.com.ar";
+    static $fromName = "NewsLetter Test";
     
     /**
      *

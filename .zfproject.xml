@@ -45,6 +45,10 @@
               <actionMethod actionName="index"/>
               <actionMethod actionName="nuevo"/>
             </controllerFile>
+            <controllerFile controllerName="Mail">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="enviarMails"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory>
             <formFile formName="LoginForm"/>
@@ -94,6 +98,12 @@
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Informes">
                 <viewScriptFile forActionName="detalle"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Mail">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Mail">
+                <viewScriptFile forActionName="enviarMails"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>

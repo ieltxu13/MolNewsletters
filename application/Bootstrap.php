@@ -52,7 +52,24 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
             \Doctrine\ORM\Events::onFlush),
                 new My\Entity\AuditoriaListener()
                 );
+    }
+    
+    protected function _initRoutes() {
         
+        $frontControlller = Zend_Controller_Front::getInstance();
+        $router = $frontControlller->getRouter();
+        
+        $router->addRoute(
+                'detalle',
+                new Zend_Controller_Router_Route('informes/detalle/:id', array(
+                    'module'=>'default',
+                    'controller'=>'informes',
+                    'action'=>'detalle',
+                    'id'=>null
+                ),
+                array('id' => '\d+')
+                )
+                );
     }
 
 }

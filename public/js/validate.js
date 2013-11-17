@@ -20,8 +20,8 @@ function doValidation(id,form)
 {
     var currenturl = window.location.pathname;
     var mca = currenturl.split('/');
-    var url = 'http://molnewsletters/async/validarform';
-   //var url = 'http://cominlavalle.com.ar/public/asynchronic/validarform';
+    //var url = 'http://molnewsletters/async/validarform';
+   var url = 'http://grupomol.azdesarrollo.com.ar/async/validarform';
    //por cada uno, serializo el valor con el nombre en un array
    var data ={};
    $("input").each(function()

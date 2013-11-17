@@ -1,6 +1,6 @@
 <div class="titulo-y-acciones">
     <h1>Informe</h1>
-    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'informes', 'action' => 'index')) ?>">
+    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'informes', 'action' => 'index'),null,true) ?>">
         <img src="<?php echo $this->baseUrl() . '/img/back.png' ?>" class="pull-right">
     </a>
 </div>
@@ -26,7 +26,7 @@
 else : ?>
 <?php endif; ?>
 
-<a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'informes', 'action' => 'agregar-imagen', 'id' => $this->informe->getId())) ?>">
+<a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'informes', 'action' => 'agregar-imagen', 'id' => $this->informe->getId()),null,true) ?>">
     <img src="<?php echo $this->baseUrl() . '/img/add_to_folder.png' ?>" class="pull-right">
 </a>
 <br>
