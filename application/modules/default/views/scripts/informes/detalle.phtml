@@ -1,0 +1,33 @@
+<div class="titulo-y-acciones">
+    <h1>Informe</h1>
+    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'informes', 'action' => 'index')) ?>">
+        <img src="<?php echo $this->baseUrl() . '/img/back.png' ?>" class="pull-right">
+    </a>
+</div>
+<br>
+
+<h1><?php echo $this->informe->getTitulo() ?></h1>
+<br>
+<h1><?php echo $this->informe->getCopete() ?></h1>
+<br>
+
+<?php if ($this->informe->getImagenes()->count() > 0) :
+    foreach ($this->informe->getImagenes() as $imagen) :
+        ?>
+
+        <div class="thumbnail">
+            <img src="<?php echo $this->baseUrl() . '/img/imagenesInformes/' .$imagen->getNombre()?>" alt="...">
+            <div class="caption">
+                <p><?php echo $imagen->getResumen()?></p>
+            </div>
+        </div>
+
+    <?php endforeach;
+else : ?>
+<?php endif; ?>
+
+<a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'informes', 'action' => 'agregar-imagen', 'id' => $this->informe->getId())) ?>">
+    <img src="<?php echo $this->baseUrl() . '/img/add_to_folder.png' ?>" class="pull-right">
+</a>
+<br>
+<p><?php echo $this->informe->getResumen() ?></p>

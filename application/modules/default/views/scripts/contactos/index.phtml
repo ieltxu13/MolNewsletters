@@ -1,8 +1,8 @@
 <div class="titulo-y-acciones">
-  <h1>Contactos</h1>
-  <a href="<?php echo $this->url(array('module'=>'default','controller'=>'contactos','action'=>'nuevo'))?>">
-      <img src="<?php echo $this->baseUrl() . '/img/add_business_user.png'?>" class="pull-right">
-  </a>
+    <h1>Contactos</h1>
+    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'contactos', 'action' => 'nuevo')) ?>">
+        <img src="<?php echo $this->baseUrl() . '/img/add_business_user.png' ?>" class="pull-right">
+    </a>
 </div>
 <br>
 <table class="table">
@@ -12,16 +12,20 @@
         <th>Teléfono</th>
         <th>sitio</th>
     </tr>
-    <tr>
-        <?php 
-        if ($this->contactos != null) :
-        foreach ($this->contactos as $contacto) :?>
-        <td><?php echo $contacto->getNombre() ?></td>
-        <td><?php echo $contacto->getEmail() ?></td>
-        <td><?php echo $contacto->getTelefonos() ?></td>
-        <td><?php echo $contacto->getSitio() ?></td>
-        <?php endforeach; else : ?>
+
+    <?php
+    if ($this->contactos != null) :
+        foreach ($this->contactos as $contacto) :
+            ?>
+            <tr>
+                <td><?php echo $contacto->getNombre() ?></td>
+                <td><?php echo $contacto->getEmail() ?></td>
+                <td><?php echo $contacto->getTelefonos() ?></td>
+                <td><?php echo $contacto->getSitio() ?></td>
+            </tr>
+        <?php endforeach;
+    else : ?>
         <td colspan="4">No se encontraron registros</td>
-        <?php endif; ?>
-    </tr>
+<?php endif; ?>
+
 </table>

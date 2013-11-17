@@ -1,4 +1,8 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Informes</b> and script/action name <b>agregarImagen</b></p>
+<div class="titulo-y-acciones">
+  <h1>Agregar Imagen</h1>
+  <a href="<?php echo $this->url(array('module'=>'default','controller'=>'index','action'=>'detalle','id'=>$this->id))?>">
+      <img src="<?php echo $this->baseUrl() . '/img/back.png'?>" class="pull-right">
+  </a>
 </div>
+<br>
+<?php echo $this->formimagen ?>

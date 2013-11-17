@@ -29,7 +29,7 @@ class Application_Model_Acl extends Zend_Acl
         
         $this
              ->allow('usuario','default:index',array('salir'))
-             ->allow('usuario','default:informes',array('index','nuevo'))
+             ->allow('usuario','default:informes',array('index','nuevo','agregar-imagen','detalle'))
              ->allow('usuario','default:contactos',array('index','nuevo'))
              ->deny('usuario','default:index',array('index'));
         

@@ -36,6 +36,7 @@
               <actionMethod actionName="agregarImagen"/>
               <actionMethod actionName="agregarImagen2"/>
               <actionMethod actionName="agregarImagen22"/>
+              <actionMethod actionName="detalle"/>
             </controllerFile>
             <controllerFile controllerName="Async">
               <actionMethod actionName="index"/>
@@ -90,6 +91,9 @@
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Informes">
                 <viewScriptFile forActionName="agregarImagen22"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Informes">
+                <viewScriptFile forActionName="detalle"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>

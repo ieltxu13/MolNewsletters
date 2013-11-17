@@ -58,7 +58,7 @@ class Imagen {
         return $this->informe;
     }
 
-    public function setInforme(Contacto $informe) {
+    public function setInforme(Informe $informe) {
         $this->informe = $informe;
     }
 

@@ -1,12 +1,10 @@
 <?php
 
-class Default_InformesController extends Zend_Controller_Action {
+class Default_InformesController extends Zend_Controller_Action
+{
 
     /**
      * @var Bisna\Application\Container\DoctrineContainer
-     *
-     *
-     *
      *
      *
      *
@@ -17,19 +15,17 @@ class Default_InformesController extends Zend_Controller_Action {
      * @var Doctrine\ORM\EntityManager
      *
      *
-     *
-     *
-     *
-     *
      */
     protected $_em = null;
 
-    public function init() {
+    public function init()
+    {
         $this->_doctrineContainer = Zend_Registry::get('doctrine');
         $this->_em = $this->_doctrineContainer->getEntityManager();
     }
 
-    public function indexAction() {
+    public function indexAction()
+    {
         
         $query = $this->_em->createQuery('SELECT I FROM My\Entity\Informe I ORDER BY I.titulo DESC');
         
@@ -40,7 +36,8 @@ class Default_InformesController extends Zend_Controller_Action {
         $this->view->mensajes = $this->_helper->flashMessenger->getMessages();
     }
 
-    public function agregarImagenAction() {
+    public function agregarImagenAction()
+    {
 
         if (!$this->_getParam('id')) {
 
@@ -50,7 +47,7 @@ class Default_InformesController extends Zend_Controller_Action {
         }
 
         $idInforme = $this->getParam('id');
-
+        $this->view->id = $idInforme;
 
 
         $form = new Default_Form_ImagenForm();
@@ -68,22 +65,23 @@ class Default_InformesController extends Zend_Controller_Action {
                 $imagen = new My\Entity\Imagen();
 
                 $imagen->setResumen($form->resumen->getValue());
-                $imagen->setNombre($form->upload->getFileName());
+                $imagen->setNombre(substr(strrchr($form->upload->getFileName(), '/'),1));
 
                 $informe = $this->_em->find('My\Entity\Informe', $idInforme);
 
                 $informe->agregarImagen($imagen);
-
+                $imagen->setInforme($informe);
                 $this->_em->flush();
 
-                $this->_helper->flashMessenger->addMessages('Imagen Agregada');
+                $this->_helper->flashMessenger->addMessage('Imagen Agregada');
 
                 $this->_helper->redirector('index');
             }
         }
     }
-    
-    public function nuevoAction(){
+
+    public function nuevoAction()
+    {
         $form = new Default_Form_InformeForm();
 
         $this->view->formInforme = $form;
@@ -112,5 +110,24 @@ class Default_InformesController extends Zend_Controller_Action {
         }
     }
 
+    public function detalleAction()
+    {
+        if (!$this->_getParam('id')) {
+
+            $this->_helper->redirector('index');
+
+            $this->_helper->flashMessenger->addMessages('error');
+        }
+
+        $idInforme = $this->getParam('id');
+        
+        $informe = $this->_em->find('My\Entity\Informe',$idInforme);
+        
+        $this->view->informe = $informe;
+    }
+
+
 }
+
+
 

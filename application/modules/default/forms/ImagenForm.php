@@ -19,7 +19,7 @@ class Default_Form_ImagenForm extends Zend_Form {
         $upload = new Zend_Form_Element_File('upload');
         $upload->setLabel('Elegir Imagen')
                 ->setRequired()
-                ->setDestination('/')
+                ->setDestination(BASE_PATH . '/img/imagenesInformes')
                 ->addValidator('Count', false, 1)//Asegura que sea solo un archivo
                 ->addValidator('Size', false, 10240000)//Limite al tamaño del archivo
                 ->addValidator('Extension', false, 'jpg,png,gif')

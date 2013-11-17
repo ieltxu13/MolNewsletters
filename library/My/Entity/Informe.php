@@ -41,7 +41,7 @@ class Informe {
     /**
      *
      * @var GrupoContactos
-     * @OneToMany (targetEntity="Imagen", mappedBy="resumen", cascade={"persist"}, fetch="EAGER")
+     * @OneToMany (targetEntity="Imagen", mappedBy="informe", cascade={"persist"}, fetch="EAGER")
      * 
      */
     protected $imagenes;
