@@ -23,13 +23,7 @@ class Default_MailController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $mail = new Zend_Mail();
-
-        $mail->addTo('ieltxu.alganaras@gmail.com', 'Ieltxu');
-        $mail->setFrom('ialganaras@cominlavalle.com.ar', 'AZ Newsletter test');
-        $mail->setSubject('Test');
-        $mail->setBodyText('Test');
-        $mail->send();
+        
     }
 
     public function enviarMailAction()

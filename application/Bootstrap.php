@@ -70,6 +70,17 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
                 array('id' => '\d+')
                 )
                 );
+        $router->addRoute(
+                'enviar-mail',
+                new Zend_Controller_Router_Route('mail/enviar-mail/:id', array(
+                    'module'=>'default',
+                    'controller'=>'mail',
+                    'action'=>'enviar-mail',
+                    'id'=>null
+                ),
+                array('id' => '\d+')
+                )
+                );
     }
 
 }
